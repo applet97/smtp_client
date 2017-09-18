@@ -17,11 +17,11 @@ def send_email(request):
 		fromaddr = request.POST.get('fromaddr')
 		toaddr = request.POST.get('toaddr')
 		subject = request.POST.get('subject')
-		msg = request.POST.get('message')
+		msg = request.POST.get('msg')
 	else:
 		fromaddr = request.GET.get('fromaddr')
 		toaddr = request.GET.get('toaddr')
 		subject = request.GET.get('subject')
-		msg = request.GET.get('message')
+		msg = request.GET.get('msg')
 
 	return HttpResponse(smtp_client.send_mailru_email(fromaddr=fromaddr, toaddr=toaddr, subject=subject, message=msg))

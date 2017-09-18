@@ -79,6 +79,7 @@ def send_mailru_email(fromaddr, toaddr, subject=None, message=None):
 	sock.send("To: <{}>".format(toaddr) + CRLF)
 	sock.send("Subject: <{}>".format(subject) + CRLF)
 	sock.send(message + CRLF)
+	print "message: " + message
 	sock.send("." + CRLF)
 	print "8: " + sock.recv(1024)
 	sock.send("QUIT" + CRLF)
